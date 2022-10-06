@@ -1,7 +1,7 @@
 public class Data {
 
     public Integer dia;
-    private int mes;
+    private Integer mes;
     public Integer ano;
 
     public Data(int dia, int mes, int ano) {
@@ -56,7 +56,7 @@ public class Data {
     }
 
     public int compara(Data x) {
-        if (this.dia == x.dia && this.mes == x.mes && this.ano == x.ano) {
+        if (this.dia.equals(x.dia) && this.mes.equals(x.mes) && this.ano.equals(x.ano)) {
             return 0;
         }
 
@@ -69,7 +69,7 @@ public class Data {
         }
 
         // Ex.: 01/05/2022  -> 08/05/2022
-        if (this.ano == x.ano && this.mes == x.mes) {
+        if (this.ano.equals(x.ano) && this.mes.equals(x.mes)) {
             if (this.dia > x.dia) {
                 return 1;
             } else {
@@ -80,7 +80,7 @@ public class Data {
         }
 
         // Ex.: 01/06/2022  -> 08/05/2022
-        if (this.ano == x.ano) {
+        if (this.ano.equals(x.ano)) {
             if (this.mes > x.mes) {
                 return 1;
             } else {
