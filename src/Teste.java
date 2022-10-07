@@ -11,6 +11,12 @@ public class Teste {
             System.out.println("Diferente");
         }
 
+
+
+        String[] teste = {"aaa", "bbb", "ccc"};
+        System.out.println(teste[1]);
+
+
     }
 
 }

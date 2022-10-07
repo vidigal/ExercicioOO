@@ -4,6 +4,9 @@ public class Data {
     private Integer mes;
     public Integer ano;
 
+    public static String[] nomesMeses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+
+
     public Data(int dia, int mes, int ano) {
         this.dia = dia;
         this.mes = mes;
@@ -14,6 +17,14 @@ public class Data {
             this.mes = 1;
             this.ano = 1;
         }
+    }
+
+    public Integer getDia() {
+        return this.dia;
+    }
+
+    public Integer getMes() {
+        return this.mes;
     }
 
     private boolean isValida() {
@@ -89,7 +100,44 @@ public class Data {
         }
 
         return -2;
+    }
 
+    public String getMesExtenso() {
+        return Data.nomesMeses[this.mes-1];
+    }
+
+//    public String getMesExtenso() {
+//        if (this.mes.equals(1)) {
+//            return "Janeiro";
+//        } else if (this.mes.equals(2)) {
+//            return "Fevereiro";
+//        } else if (this.mes.equals(3)) {
+//            return "Março";
+//        } else if (this.mes.equals(4)) {
+//            return "Abril";
+//        } else if (this.mes.equals(5)) {
+//            return "Maio";
+//        } else if (this.mes.equals(6)) {
+//            return "Junho";
+//        } else if (this.mes.equals(7)) {
+//            return "Julho";
+//        } else if (this.mes.equals(8)) {
+//            return "Agosto";
+//        } else if (this.mes.equals(9)) {
+//            return "Setembro";
+//        } else if (this.mes.equals(10)) {
+//            return "Outubro";
+//        } else if (this.mes.equals(11)) {
+//            return "Novembro";
+//        } else if (this.mes.equals(12)) {
+//            return "Dezembro";
+//        }
+//
+//        return null;
+//    }
+
+    public Data clone() {
+        return new Data(this.dia, this.mes, this.ano);
     }
 
 }
