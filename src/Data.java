@@ -6,7 +6,6 @@ public class Data {
 
     public static String[] nomesMeses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
 
-
     public Data(int dia, int mes, int ano) {
         this.dia = dia;
         this.mes = mes;
@@ -138,6 +137,20 @@ public class Data {
 
     public Data clone() {
         return new Data(this.dia, this.mes, this.ano);
+    }
+
+    public boolean isBissexto() {
+        //Caso 1) É um número divisível por 4, mas não é divisível por 100.
+        //Caso 2) É um número divisível por 4, por 100 e por 400.
+        if ((this.ano % 4 == 0) && (this.ano % 100 != 0)) {
+            return true;
+        }
+
+        if ((this.ano % 4 ==0) && (this.ano % 100 == 0) && (this.ano % 400 == 0)) {
+            return true;
+        }
+
+        return false;
     }
 
 }
