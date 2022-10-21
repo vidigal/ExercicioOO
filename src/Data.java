@@ -58,8 +58,16 @@ public class Data {
         }
 
         if (mes == 2) {
-            if (dia < 1 || dia > 29) {
-                return false;
+            if (isBissexto()) {
+                if (dia < 1 || dia > 29) {
+                    return false;
+                }
+            } else {
+                if (!isBissexto()) {
+                    if (dia < 1 || dia > 28) {
+                        return false;
+                    }
+                }
             }
         }
         return true;
